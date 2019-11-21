@@ -1,8 +1,10 @@
-import vars
-from telegram.ext import Updater
-from facebook_scraper import get_posts
-import logging
 import json
+import logging
+
+from facebook_scraper import get_posts
+from telegram.ext import Updater
+
+import vars
 
 
 def main():
@@ -25,6 +27,7 @@ def main():
                 post_ids['published'].append(post_id)
                 with open('posts.json', 'w') as out:
                     json.dump(post_ids, out)
+                logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - Post {} added!'.format(post_id), level=logging.INFO)
 
     j.run_repeating(newAlert, 15)
 
@@ -33,5 +36,4 @@ def main():
 
 
 if __name__ == '__main__':
-    logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.WARNING)
     main()
