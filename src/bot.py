@@ -21,7 +21,7 @@ def main():
                 text = post['text']
                 img_url = post['image']
                 if img_url:
-                    bot.sendMessage(chat_id='252150963', text=img_url)
+                    bot.send_photo(chat_id='252150963', photo=img_url)
                 if text:
                     bot.sendMessage(chat_id='252150963', text=text, disable_web_page_preview=True)
                 post_ids['published'].append(post_id)
