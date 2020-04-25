@@ -7,6 +7,8 @@ RUN set -e; \
     apk add --no-cache --virtual .build-deps \
     gcc \
     libc-dev \
+    libxml2-dev\
+    libxslt-dev\
     libffi-dev \
     openssl-dev \
     linux-headers; \
