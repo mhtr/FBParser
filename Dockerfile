@@ -12,8 +12,7 @@ RUN set -e; \
     libffi-dev \
     openssl-dev \
     linux-headers; \
-    pip install --no-cache-dir -r requirements.txt; \
-    apk del .build-deps;
+    pip install --no-cache-dir -r requirements.txt;
 RUN apk add --no-cache tzdata
 ENV NAME FBParser-alpine
 ENV TZ Asia/Almaty
